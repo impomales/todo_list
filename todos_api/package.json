@@ -1,0 +1,22 @@
+{
+  "name": "todos_api",
+  "version": "1.0.0",
+  "description": "todo list api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/impomales/todo_list.git"
+  },
+  "author": "Isaias Pomales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/impomales/todo_list/issues"
+  },
+  "homepage": "https://github.com/impomales/todo_list#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
