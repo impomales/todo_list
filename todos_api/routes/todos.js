@@ -9,7 +9,17 @@ router.get('/', function(req, res) {
             res.json(todos);
         })
         .catch(function(err) {
-        res.send(err);
+            res.send(err);
+        });
+});
+
+router.get('/:todoId', function(req, res) {
+    db.Todo.findById(req.params.todoId)
+        .then(function(foundTodo) {
+            res.json(foundTodo);
+        })
+        .catch(function(err) {
+            res.send(err);
         });
 });
 
