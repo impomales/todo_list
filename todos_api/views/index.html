@@ -3,10 +3,26 @@
     <head>
         <title>Todo List</title>
         <link rel="stylesheet" href="app.css" type="text/css">
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+        </script>
     </head>
     <body>
-        <h1>This is the index page</h1>
-        <p>to do list will go here</p>
+        <header>
+            <h1>todo<span>LIST</span></h1>
+            <h2>A simple todo list app built using Node.js</h2>
+        </header>
+        
+        <section class="form">
+            <input type="text" id="todoInput" placeholder="Insert your task here...">
+        </section>
+        
+        <ul class="list">
+            <li class="task">do laundry<span>x</span></li>
+            <li class="task done">do dishes<span>x</span></li>
+        </ul>
         
         <script src="app.js" type="text/javascript"></script>
     </body>
