@@ -1,10 +1,6 @@
 /* global $ */
 $(document).ready(function() {
-    $.getJSON('/api/todos')
-        .then(addTodos)
-        .catch(function(err) {
-            console.log(err);
-        });
+    getTodos();
         
     // 13 is symbol for 'enter' key.
     // createTodo function is called when enter key is pressed.
@@ -13,7 +9,19 @@ $(document).ready(function() {
            createTodo();
        } 
     });
+    
+    $('.list').on('click', 'span', function() {
+        removeTodo($(this).parent());
+    });
 });
+
+function getTodos() {
+    $.getJSON('/api/todos')
+        .then(addTodos)
+        .catch(function(err) {
+            console.log(err);
+        });
+}
 
 function addTodos(todos) {
     todos.forEach(function(todo) {
@@ -22,9 +30,25 @@ function addTodos(todos) {
 }
 
 function addTodo(todo) {
-    var newTodo = $('<li class="task">' + todo.name + '</li>');
+    var newTodo = $('<li class="task">' + todo.name + '<span>x</span></li>');
+    newTodo.data('id', todo._id);
     if (todo.completed) newTodo.addClass('done');
     $('.list').append(newTodo);
+}
+
+function removeTodo(todo) {
+    var deleteUrl = '/api/todos/' + todo.data('id');
+    $.ajax({
+            method: 'DELETE',
+            url: deleteUrl
+        })
+        .then(function(message) {
+            console.log(message);
+            todo.remove();
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
 }
 
 function createTodo() {
