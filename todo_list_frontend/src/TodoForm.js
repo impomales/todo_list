@@ -17,6 +17,7 @@ class TodoForm extends Component {
     
     handleSubmit() {
         this.props.addTodo(this.state.inputValue);
+        this.setState({inputValue: ''});
     }
     
     render() {
