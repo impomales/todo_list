@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'todo_list_frontend')));
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'todo_list_frontend', 'build', 'index.html'));
 });
 
 app.use('/api/todos', todoRoutes);
