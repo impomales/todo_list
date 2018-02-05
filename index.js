@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 // app.use(express.static(__dirname + '/public'));
 // app.use(express.static(__dirname + '/views'));
 
-app.use(express.static(__dirname + '/todo_list_frontend/build'));
+app.use(express.static(__dirname + '/todo_list_frontend'));
 
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/todo_list_frontend/build/index.html');
