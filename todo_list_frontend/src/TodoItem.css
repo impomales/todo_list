@@ -1,0 +1,43 @@
+.list {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.task {
+    width: inherit;
+    line-height: 60px;
+    font-size: 20px;
+    padding: 0 20px;
+    color: #34495e;
+    transition: all 0.3s ease;
+}
+
+.task:hover {
+    background: grey;
+    background: rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.task:hover span {
+    opacity: 1;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #7c8184;
+}
+
+li .taskName {
+    float: left;
+}
+
+li .close {
+    float: right;
+    color: #c0392b;
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+li .close:hover {
+    color: #e74c3c;
+}
